@@ -18,10 +18,10 @@ async function body(){
     const newString = core.getInput('newString', {required : true});
     let newStringWin = core.getInput('newStringWin');
     let newStringLinux = core.getInput('newStringLinux');
-    if(newStringWin == ''){
+    if(newStringWin == 'nullForStringInAction'){
       newStringWin = newString;
     }
-    if(newStringLinux == ''){
+    if(newStringLinux == 'nullForStringInAction'){
       newStringLinux = newString;
     }
     const filePath = core.getInput('path', {required : true});

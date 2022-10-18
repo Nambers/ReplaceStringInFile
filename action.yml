@@ -22,11 +22,11 @@ inputs:
   newStringWin:
     description: 'The new string in windows, if it existed, it will be used to replace old string instead of newString'
     required: false
-    default: ''
+    default: 'nullForStringInAction'
   newStringLinux:
     description: 'The new in linux, if it existed, it will be used to replace old string instead of newString'
     required: false
-    default: ''
+    default: 'nullForStringInAction'
   showFileContent:
     description: 'Print out file content after replacement'
     required: false

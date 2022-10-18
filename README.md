@@ -1,5 +1,5 @@
 # ReplaceStringInFile action
-
+[![.github/workflows/test.yaml](https://github.com/Nambers/ReplaceStringInFile/actions/workflows/test.yaml/badge.svg)](https://github.com/Nambers/ReplaceStringInFile/actions/workflows/test.yaml)
 This action replace string in file.
 It works on Linux and Windows.
 
@@ -53,7 +53,7 @@ Default: false.
 [test.yaml](.github/workflows/test.yaml)
 ```yaml
 - name: replace
-  uses: ./
+  uses: Nambers/ReplaceStringInFile@v1
   with:
     path: ${{ github.workspace }}/a.test
     oldString: abc123))

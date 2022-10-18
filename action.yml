@@ -1,13 +1,40 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'replace string in file'
+description: 'Replace string in file'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  path:  # id of input
+    description: 'File path'
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  oldString:
+    description: 'The regex of old string, which should be replaced'
+    required: true
+  oldStringWin:
+    description: 'The regex of old string in windows, if it existed, it will be used instead of oldString'
+    required: false
+    default: ''
+  oldStringLinux:
+    description: 'The regex of old string in linux, if it existed, it will be used instead of oldString'
+    required: false
+    default: ''
+  newString:
+    description: 'Replace old string to this string'
+    required: true
+    default: ''
+  newStringWin:
+    description: 'The new string in windows, if it existed, it will be used to replace old string instead of newString'
+    required: false
+    default: ''
+  newStringLinux:
+    description: 'The new in linux, if it existed, it will be used to replace old string instead of newString'
+    required: false
+    default: ''
+  showFileContent:
+    description: 'Print out file content after replacement'
+    required: false
+    default: false
+  regexOptions:
+    description: 'Regex options of oldString regex'
+    required: false
+    default: 'g'
 runs:
   using: 'node16'
-  main: 'index.js'
+  main: 'dist/index.js'

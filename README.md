@@ -38,7 +38,7 @@ Regex options.
 Default: 'g'.  
 
 ### `escapeBackslash`
-Escape backslash ( \ -> \\ in win and \ -> / ).  
+Escape backslash ( \ -> \\\ in win and \ -> / ).  
 Default: false  
 
 ### `showFileContent`

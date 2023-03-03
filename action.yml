@@ -35,6 +35,10 @@ inputs:
     description: 'Regex options of oldString regex'
     required: false
     default: 'g'
+  escapeBackslash:
+    description: 'Escape backslash ( \ -> \\ in win and \ -> / )'
+    required: false
+    default: false
 runs:
   using: 'node16'
   main: 'dist/index.js'

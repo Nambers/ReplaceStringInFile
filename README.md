@@ -1,46 +1,45 @@
 # ReplaceStringInFile action
 [![.github/workflows/test.yaml](https://github.com/Nambers/ReplaceStringInFile/actions/workflows/test.yaml/badge.svg)](https://github.com/Nambers/ReplaceStringInFile/actions/workflows/test.yaml)
-This action replace string in file.
-It works on Linux and Windows.
+This action replace string in file.  
+It works on both Linux and Windows.  
 
 This action uses `sed` in Linux and `powershell shell code` in Windows to replace.
 
 ## Inputs
 
 ### `path`
-The path of the file.
-**Required**.
+The path of the file.  
+**Required**.  
 
 ### `oldString`
 General `oldString` regex used both in Linux and Windows.
-
-**Required**.
+**Required**.  
 
 ### `oldStringWin`
-`oldString` regex used in Windows OS. If this exist, action will use this one instead of general `oldString`.
+`oldString` regex used in Windows OS. If this exist, action will use this one instead of general `oldString`.  
 
 ### `oldStringLinux`
-`oldString` regex used in Linux OS. If this exist, action will use this one instead of general `oldString`.
+`oldString` regex used in Linux OS. If this exist, action will use this one instead of general `oldString`.  
 
 ### `newString`
-General `newString` used both in Linux and Windows.
-
-**Required** Default ''.
+General `newString` used both in Linux and Windows.  
+**Required** Default ''.  
 
 ### `newStringWin`
-`newString` used in Windows OS. If this exist, action will use this one instead of general `newString`.
-
-Default: 'nullForStringInAction'.
+`newString` used in Windows OS. If this exist, action will use this one instead of general `newString`.  
+Default: 'nullForStringInAction'.  
 
 ### `newStringLinux`
-`newString` used in Linux OS. If this exist, action will use this one instead of general `newString`.
-
-Default: 'nullForStringInAction'.
+`newString` used in Linux OS. If this exist, action will use this one instead of general `newString`.  
+Default: 'nullForStringInAction'.  
 
 ### `regexOptions`
-Regex options.
+Regex options.  
+Default: 'g'.  
 
-Default: 'g'.
+### `escapeBackslash`
+Escape backslash ( \ -> \\ in win and \ -> / ).  
+Default: false  
 
 ### `showFileContent`
 If it equal to ture, action will print out file content after replacement finished.

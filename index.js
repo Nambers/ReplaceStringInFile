@@ -24,8 +24,13 @@ async function body(){
     if(newStringLinux == 'nullForStringInAction'){
       newStringLinux = newString;
     }
+    if(core.getBooleanInput('escapeBackslash')){
+      newStringWin = newStringWin.replace("\\", "\\\\");
+      newStringLinux = newStringLinux.replace("\\", "/");
+    }
     const filePath = core.getInput('path', {required : true});
     const showFileContent = core.getBooleanInput('showFileContent');
+    
     const regexOptions = core.getInput('regexOptions');
     let command = "";
     const platform = os.platform()
@@ -36,7 +41,7 @@ async function body(){
       core.info(`replace ${oldStringWin} to ${newStringWin} in ${filePath}`);
       command = `powershell -Command "(Get-Content ${filePath}) -replace '${oldStringWin}', '${newStringWin}' | Set-Content -encoding ASCII ${filePath}"`.toString();
     }else{
-        core.setFailed("Unsupport os " + platform);
+        core.setFailed("Unsupported os " + platform);
     }  
     core.info(`run ${command}`);
     const error_code = await exec.exec(command);

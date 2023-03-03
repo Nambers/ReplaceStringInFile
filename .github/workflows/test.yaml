@@ -45,5 +45,5 @@ jobs:
           oldString: abc123))
           oldStringWin: abc123\)\)
           escapeBackslash: true
-          newString: C:\Users
+          newString: C:\Users\user\aaa
           showFileContent: true

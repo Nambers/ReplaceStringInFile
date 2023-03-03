@@ -25,8 +25,8 @@ async function body(){
       newStringLinux = newString;
     }
     if(core.getBooleanInput('escapeBackslash')){
-      newStringWin = newStringWin.replace("\\", "\\\\");
-      newStringLinux = newStringLinux.replace("\\", "/");
+      newStringWin = newStringWin.replaceAll("\\", "\\\\");
+      newStringLinux = newStringLinux.replaceAll("\\", "/");
     }
     const filePath = core.getInput('path', {required : true});
     const showFileContent = core.getBooleanInput('showFileContent');
